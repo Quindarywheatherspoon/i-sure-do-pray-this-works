@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <script>
-            function create() {
-                var url = "https://forms.gle/XDjeitRYayhEB4FH7";
-                var win = window.open();
-                win.document.body.style.margin = '0';
-                win.document.body.style.height = '100vh';
-                var iframe = win.document.createElement('iframe');
-                iframe.style.border = 'none';
-                iframe.style.width = '100%';
-                iframe.style.height = '100%';
-                iframe.style.margin = '0';
-                iframe.src = url;
-                win.document.body.appendChild(iframe);
-            }
-            </script>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <script>
-            // Function to open links in a new tab with an iframe
-            function openLinkInIframe(url) {
-                var win = window.open();
-                win.document.body.style.margin = '0';
-                win.document.body.style.height = '100vh';
-                var iframe = win.document.createElement('iframe');
-                iframe.style.border = 'none';
-                iframe.style.width = '100%';
-                iframe.style.height = '100%';
-                iframe.style.margin = '0';
-                iframe.src = url;
-                win.document.body.appendChild(iframe);
-            }
-        
-            // Function to attach click event to game links only
-            function attachLinkHandlers() {
-                // Select all anchor tags with the class 'game-link'
-                var gameLinks = document.querySelectorAll('a.game-link'); 
-        
-                gameLinks.forEach(function(link) {
-                    link.addEventListener('click', function(event) {
-                        event.preventDefault(); // Prevent the default link behavior
-                        var url = this.getAttribute('href'); // Get the URL from the href attribute
-                        openLinkInIframe(url); // Open the link in a new tab with an iframe
-                    });
+<head>
+    <script>
+        function create() {
+            var url = "https://forms.gle/XDjeitRYayhEB4FH7";
+            var win = window.open();
+            win.document.body.style.margin = '0';
+            win.document.body.style.height = '100vh';
+            var object = win.document.createElement('object');
+            object.style.border = 'none';
+            object.style.width = '100%';
+            object.style.height = '100%';
+            object.style.margin = '0';
+            object.data = url;
+            win.document.body.appendChild(object);
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Function to open links in a new tab with an object
+        function openLinkInObject(url) {
+            var win = window.open();
+            win.document.body.style.margin = '0';
+            win.document.body.style.height = '100vh';
+            var object = win.document.createElement('object');
+            object.style.border = 'none';
+            object.style.width = '100%';
+            object.style.height = '100%';
+            object.style.margin = '0';
+            object.data = url;
+            win.document.body.appendChild(object);
+        }
+    
+        // Function to attach click event to game links only
+        function attachLinkHandlers() {
+            // Select all anchor tags with the class 'game-link'
+            var gameLinks = document.querySelectorAll('a.game-link'); 
+    
+            gameLinks.forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent the default link behavior
+                    var url = this.getAttribute('href'); // Get the URL from the href attribute
+                    openLinkInObject(url); // Open the link in a new tab with an object
                 });
-            }
-        
-            // Attach the event handlers when the DOM is fully loaded
-            document.addEventListener('DOMContentLoaded', attachLinkHandlers);
-        </script>
-        
-<div class="heading" style='background-color: #000000'>
-    <h1>Ultimate Game Hub V3</h1>
+            });
+        }
+    
+        // Attach the event handlers when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', attachLinkHandlers);
+    </script>
+    
+    <div class="heading" style='background-color: #000000'>
+        <h1>Ultimate Game Hub V3</h1>
     </div>
     <nav>
         <ul class="navbar">
